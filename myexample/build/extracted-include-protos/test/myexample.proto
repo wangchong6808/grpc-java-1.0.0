@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.myexample.myservice";
+option java_outer_classname = "MyServiceProto";
+
+package person;
+
+service PersonService{
+    rpc createPerson(Person) returns (PersonResponse) {}
+
+    rpc updatePerson(Person) returns (PersonResponse) {}
+}
+
+message Person {
+    string name=1;
+    int32 age=2;
+}
+
+message PersonResponse {
+    string response=1;
+}
